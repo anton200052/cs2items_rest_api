@@ -27,7 +27,7 @@ public class CurrencyRate
     private CurrencyCode currencyCode;;
 
     @Column(name = "rate", nullable = false)
-    private double rate;
+    private BigDecimal rate;
 
     @Column(name = "last_updated", nullable = false)
     private LocalDateTime lastUpdated;
@@ -37,7 +37,7 @@ public class CurrencyRate
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         CurrencyRate that = (CurrencyRate) o;
-        return Double.compare(that.rate, rate) == 0 &&
+        return (rate == null ? that.rate == null : rate.compareTo(that.rate) == 0)  &&
                 currencyCode == that.currencyCode;
     }
 

@@ -5,6 +5,8 @@ import lombok.RequiredArgsConstructor;
 import me.vasylkov.cs2itemsrestapi.database.dao.ItemRepository;
 import me.vasylkov.cs2itemsrestapi.database.entity.Item;
 import me.vasylkov.cs2itemsrestapi.database.entity.Price;
+import me.vasylkov.cs2itemsrestapi.rest.exception.EntityNotFoundException;
+import org.slf4j.Logger;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -18,6 +20,7 @@ import java.util.stream.Collectors;
 public class ItemServiceImp implements ItemService
 {
     private final ItemRepository itemRepository;
+    private final Logger logger;
 
     @Transactional
     public void updateItems(List<Item> items)
@@ -35,8 +38,6 @@ public class ItemServiceImp implements ItemService
                 dbItem.setMarketable(apiItem.isMarketable());
                 dbItem.setTradable(apiItem.isTradable());
                 dbItem.setClassId(apiItem.getClassId());
-                dbItem.setIconUrl(apiItem.getIconUrl());
-                dbItem.setIconUrlLarge(apiItem.getIconUrlLarge());
                 dbItem.setType(apiItem.getType());
                 dbItem.setRarity(apiItem.getRarity());
                 dbItem.setRarityColor(apiItem.getRarityColor());
@@ -53,6 +54,7 @@ public class ItemServiceImp implements ItemService
 
                 dbItem.setPrice(apiItemPrice);
                 toBeSaved.add(dbItem);
+
                 updatedCount++;
             }
         }
@@ -62,7 +64,7 @@ public class ItemServiceImp implements ItemService
             saveAllItems(toBeSaved);
         }
 
-        System.out.println("Updated " + updatedCount + " items.");
+        logger.info("Updated {} items.", updatedCount);
     }
 
     @Override
@@ -74,13 +76,13 @@ public class ItemServiceImp implements ItemService
     @Override
     public Item findItemById(int id)
     {
-        return itemRepository.findById(id).orElse(null);
+        return itemRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Item with id " + id + " not found"));
     }
 
     @Override
     public Item findItemByName(String name)
     {
-        return itemRepository.findByName(name).orElse(null);
+        return itemRepository.findByName(name).orElseThrow(() -> new EntityNotFoundException("Item with name " + name + " not found"));
     }
 
     @Override

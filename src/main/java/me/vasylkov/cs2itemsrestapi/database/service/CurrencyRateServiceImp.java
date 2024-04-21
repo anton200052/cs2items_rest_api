@@ -6,6 +6,8 @@ import me.vasylkov.cs2itemsrestapi.database.entity.CurrencyCode;
 import me.vasylkov.cs2itemsrestapi.database.entity.CurrencyRate;
 import me.vasylkov.cs2itemsrestapi.database.entity.Item;
 import me.vasylkov.cs2itemsrestapi.database.entity.Price;
+import me.vasylkov.cs2itemsrestapi.rest.exception.EntityNotFoundException;
+import org.slf4j.Logger;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -19,6 +21,7 @@ import java.util.stream.Collectors;
 public class CurrencyRateServiceImp implements CurrencyRateService
 {
     private final CurrencyRateRepository currencyRateRepository;
+    private final Logger logger;
 
     @Override
     public void updateCurrencyRates(List<CurrencyRate> currencyRates)
@@ -46,7 +49,7 @@ public class CurrencyRateServiceImp implements CurrencyRateService
             saveAllCurrencyRates(toBeSaved);
         }
 
-        System.out.println("Updated " + updatedCount + " currency rates.");
+        logger.info("Updated {} currency rates.", updatedCount);
     }
 
     @Override
@@ -58,13 +61,13 @@ public class CurrencyRateServiceImp implements CurrencyRateService
     @Override
     public CurrencyRate findCurrencyRateById(long id)
     {
-        return currencyRateRepository.findById(id).orElse(null);
+        return currencyRateRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Currency rate with id " + id + " not found"));
     }
 
     @Override
     public CurrencyRate findCurrencyRateByCurrencyCode(CurrencyCode currencyCode)
     {
-        return currencyRateRepository.findByCurrencyCode(currencyCode).orElse(null);
+        return currencyRateRepository.findByCurrencyCode(currencyCode).orElseThrow(() -> new EntityNotFoundException("Currency rate with code " + currencyCode + " not found"));
     }
 
     @Override

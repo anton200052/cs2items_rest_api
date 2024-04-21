@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 @Getter
@@ -27,11 +28,11 @@ public class Price {
 
     @Column(name="average")
     @JsonAlias({"average", "average_price"})
-    private double average;
+    private BigDecimal average;
 
     @Column(name="median")
     @JsonAlias({"median", "median_price"})
-    private double median;
+    private BigDecimal median;
 
     @Column(name="sold")
     @JsonAlias({"sold", "amount_sold"})
@@ -39,27 +40,27 @@ public class Price {
 
     @Column(name="standard_deviation")
     @JsonProperty("standard_deviation")
-    private double standardDeviation;
+    private BigDecimal standardDeviation;
 
     @Column(name="lowest_price")
     @JsonProperty("lowest_price")
-    private double lowestPrice;
+    private BigDecimal lowestPrice;
 
     @Column(name="highest_price")
     @JsonProperty("highest_price")
-    private double highestPrice;
+    private BigDecimal highestPrice;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Price price = (Price) o;
-        return Double.compare(price.average, average) == 0 &&
-                Double.compare(price.median, median) == 0 &&
-                sold == price.sold &&
-                Double.compare(price.standardDeviation, standardDeviation) == 0 &&
-                Double.compare(price.lowestPrice, lowestPrice) == 0 &&
-                Double.compare(price.highestPrice, highestPrice) == 0;
+        return sold == price.sold &&
+                (average == null ? price.average == null : average.compareTo(price.average) == 0) &&
+                (median == null ? price.median == null : median.compareTo(price.median) == 0) &&
+                (standardDeviation == null ? price.standardDeviation == null : standardDeviation.compareTo(price.standardDeviation) == 0) &&
+                (lowestPrice == null ? price.lowestPrice == null : lowestPrice.compareTo(price.lowestPrice) == 0) &&
+                (highestPrice == null ? price.highestPrice == null : highestPrice.compareTo(price.highestPrice) == 0);
     }
 
     @Override

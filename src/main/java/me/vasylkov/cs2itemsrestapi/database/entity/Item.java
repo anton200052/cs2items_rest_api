@@ -33,14 +33,6 @@ public class Item {
     @JsonProperty("classid")
     private String classId;
 
-    @Column(name = "icon_url", length = 2048)
-    @JsonProperty("icon_url")
-    private String iconUrl;
-
-    @Column(name = "icon_url_large", length = 2048)
-    @JsonProperty("icon_url_large")
-    private String iconUrlLarge;
-
     @Column(name = "type")
     private String type;
 
@@ -68,8 +60,6 @@ public class Item {
                 tradable == item.tradable &&
                 Objects.equals(name, item.name) &&
                 Objects.equals(classId, item.classId) &&
-                Objects.equals(iconUrl, item.iconUrl) &&
-                Objects.equals(iconUrlLarge, item.iconUrlLarge) &&
                 Objects.equals(type, item.type) &&
                 Objects.equals(rarity, item.rarity) &&
                 Objects.equals(rarityColor, item.rarityColor) &&
@@ -79,6 +69,6 @@ public class Item {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, marketable, tradable, classId, iconUrl, iconUrlLarge, type, rarity, rarityColor, firstSaleDate, price);
+        return Objects.hash(name, marketable, tradable, classId, type, rarity, rarityColor, firstSaleDate, price);
     }
 }

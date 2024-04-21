@@ -14,7 +14,6 @@ public class DatabaseUpdateScheduler
     @Scheduled(initialDelay = 5, fixedDelay = 7200000)  // 7200000 ms = 2 часа
     public void updateData()
     {
-        System.out.println(1);
         tablesUpdater.updateTables();
     }
 }

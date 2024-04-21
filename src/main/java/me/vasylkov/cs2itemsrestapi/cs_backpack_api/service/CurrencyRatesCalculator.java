@@ -6,6 +6,9 @@ import me.vasylkov.cs2itemsrestapi.database.entity.CurrencyRate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,11 +37,11 @@ public class CurrencyRatesCalculator
         return currencyRates;
     }
 
-    private double calculateCurrencyRate(CurrencyCode currencyCode)
+    private BigDecimal calculateCurrencyRate(CurrencyCode currencyCode)
     {
-        double usdAveragePrice = itemFetcherService.fetchSingleItem(itemNameForUpdatingCurrencyRates, CurrencyCode.USD).getPrice().getAverage();
-        double currencyCodeAveragePrice = itemFetcherService.fetchSingleItem(itemNameForUpdatingCurrencyRates, currencyCode).getPrice().getAverage();
+        BigDecimal usdAveragePrice = itemFetcherService.fetchSingleItem(itemNameForUpdatingCurrencyRates, CurrencyCode.USD).getPrice().getAverage();
+        BigDecimal currencyCodeAveragePrice = itemFetcherService.fetchSingleItem(itemNameForUpdatingCurrencyRates, currencyCode).getPrice().getAverage();
 
-        return currencyCodeAveragePrice / usdAveragePrice;
+        return currencyCodeAveragePrice.divide(usdAveragePrice, 2, RoundingMode.HALF_UP);
     }
 }
