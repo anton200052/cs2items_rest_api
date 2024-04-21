@@ -9,9 +9,8 @@ import me.vasylkov.cs2itemsrestapi.database.entity.CurrencyCode;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-@EqualsAndHashCode(callSuper = true)
 @Data
-public class CurrencyRateDTO extends DataTransferObject
+public class CurrencyRateDTO
 {
     @JsonProperty("currency_code")
     private CurrencyCode currencyCode;

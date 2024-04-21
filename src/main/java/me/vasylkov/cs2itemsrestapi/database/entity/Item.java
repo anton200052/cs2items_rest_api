@@ -24,10 +24,10 @@ public class Item {
     private String name;
 
     @Column(name = "marketable")
-    private boolean marketable;
+    private Boolean marketable;
 
     @Column(name = "tradable")
-    private boolean tradable;
+    private Boolean tradable;
 
     @Column(name = "class_id")
     @JsonProperty("classid")
@@ -56,8 +56,8 @@ public class Item {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Item item = (Item) o;
-        return marketable == item.marketable &&
-                tradable == item.tradable &&
+        return Objects.equals(marketable, item.marketable) &&
+                Objects.equals(tradable, item.tradable) &&
                 Objects.equals(name, item.name) &&
                 Objects.equals(classId, item.classId) &&
                 Objects.equals(type, item.type) &&

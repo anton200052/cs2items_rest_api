@@ -36,11 +36,7 @@ public class Price {
 
     @Column(name="sold")
     @JsonAlias({"sold", "amount_sold"})
-    private int sold;
-
-    @Column(name="standard_deviation")
-    @JsonProperty("standard_deviation")
-    private BigDecimal standardDeviation;
+    private Integer sold;
 
     @Column(name="lowest_price")
     @JsonProperty("lowest_price")
@@ -55,17 +51,17 @@ public class Price {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Price price = (Price) o;
-        return sold == price.sold &&
+
+        return (Objects.equals(sold, price.sold)) &&
                 (average == null ? price.average == null : average.compareTo(price.average) == 0) &&
                 (median == null ? price.median == null : median.compareTo(price.median) == 0) &&
-                (standardDeviation == null ? price.standardDeviation == null : standardDeviation.compareTo(price.standardDeviation) == 0) &&
                 (lowestPrice == null ? price.lowestPrice == null : lowestPrice.compareTo(price.lowestPrice) == 0) &&
                 (highestPrice == null ? price.highestPrice == null : highestPrice.compareTo(price.highestPrice) == 0);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(item, average, median, sold, standardDeviation, lowestPrice, highestPrice);
+        return Objects.hash(item, average, median, sold, lowestPrice, highestPrice);
     }
 }
 

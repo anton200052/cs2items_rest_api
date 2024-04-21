@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import me.vasylkov.cs2itemsrestapi.database.entity.Price;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.Map;
 
 public class ItemPriceDeserializer extends JsonDeserializer<Price>
@@ -21,7 +22,10 @@ public class ItemPriceDeserializer extends JsonDeserializer<Price>
         });
         for (Price price : map.values())
         {
-            return price;
+            if ((price.getAverage() != null && price.getAverage().compareTo(BigDecimal.ZERO) != 0) || (price.getMedian() != null && price.getMedian().compareTo(BigDecimal.ZERO) != 0) || (price.getLowestPrice() != null && price.getLowestPrice().compareTo(BigDecimal.ZERO) != 0) || (price.getHighestPrice() != null && price.getHighestPrice().compareTo(BigDecimal.ZERO) != 0) || (price.getSold() != null && !price.getSold().equals(0)))
+            {
+                return price;
+            }
         }
         return null;
     }

@@ -5,9 +5,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import me.vasylkov.cs2itemsrestapi.database.entity.Price;
 
-@EqualsAndHashCode(callSuper = true)
 @Data
-public class ItemDTO extends DataTransferObject
+public class ItemDTO
 {
     private String name;
 

@@ -1,5 +1,6 @@
 package me.vasylkov.cs2itemsrestapi.database.service;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import me.vasylkov.cs2itemsrestapi.database.dao.CurrencyRateRepository;
 import me.vasylkov.cs2itemsrestapi.database.entity.CurrencyCode;
@@ -24,6 +25,7 @@ public class CurrencyRateServiceImp implements CurrencyRateService
     private final Logger logger;
 
     @Override
+    @Transactional
     public void updateCurrencyRates(List<CurrencyRate> currencyRates)
     {
         Map<CurrencyCode, CurrencyRate> existingItems = findAllCurrencyRates().stream().collect(Collectors.toMap(CurrencyRate::getCurrencyCode, Function.identity()));
@@ -53,24 +55,28 @@ public class CurrencyRateServiceImp implements CurrencyRateService
     }
 
     @Override
+    @Transactional
     public void saveAllCurrencyRates(List<CurrencyRate> currencyRates)
     {
         currencyRateRepository.saveAll(currencyRates);
     }
 
     @Override
+    @Transactional
     public CurrencyRate findCurrencyRateById(long id)
     {
         return currencyRateRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Currency rate with id " + id + " not found"));
     }
 
     @Override
+    @Transactional
     public CurrencyRate findCurrencyRateByCurrencyCode(CurrencyCode currencyCode)
     {
         return currencyRateRepository.findByCurrencyCode(currencyCode).orElseThrow(() -> new EntityNotFoundException("Currency rate with code " + currencyCode + " not found"));
     }
 
     @Override
+    @Transactional
     public List<CurrencyRate> findAllCurrencyRates()
     {
         return currencyRateRepository.findAll();

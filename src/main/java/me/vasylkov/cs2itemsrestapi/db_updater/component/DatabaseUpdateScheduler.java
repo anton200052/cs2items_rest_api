@@ -1,7 +1,6 @@
 package me.vasylkov.cs2itemsrestapi.db_updater.component;
 
 import lombok.RequiredArgsConstructor;
-import me.vasylkov.cs2itemsrestapi.db_updater.service.DatabaseTablesUpdater;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 

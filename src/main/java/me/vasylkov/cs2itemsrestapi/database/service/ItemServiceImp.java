@@ -35,8 +35,8 @@ public class ItemServiceImp implements ItemService
             if (!dbItem.equals(apiItem))
             {
                 dbItem.setName(apiItem.getName());
-                dbItem.setMarketable(apiItem.isMarketable());
-                dbItem.setTradable(apiItem.isTradable());
+                dbItem.setMarketable(apiItem.getMarketable());
+                dbItem.setTradable(apiItem.getTradable());
                 dbItem.setClassId(apiItem.getClassId());
                 dbItem.setType(apiItem.getType());
                 dbItem.setRarity(apiItem.getRarity());
@@ -54,7 +54,6 @@ public class ItemServiceImp implements ItemService
 
                 dbItem.setPrice(apiItemPrice);
                 toBeSaved.add(dbItem);
-
                 updatedCount++;
             }
         }
@@ -68,24 +67,28 @@ public class ItemServiceImp implements ItemService
     }
 
     @Override
+    @Transactional
     public void saveAllItems(List<Item> items)
     {
         itemRepository.saveAll(items);
     }
 
     @Override
+    @Transactional
     public Item findItemById(int id)
     {
         return itemRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Item with id " + id + " not found"));
     }
 
     @Override
+    @Transactional
     public Item findItemByName(String name)
     {
         return itemRepository.findByName(name).orElseThrow(() -> new EntityNotFoundException("Item with name " + name + " not found"));
     }
 
     @Override
+    @Transactional
     public List<Item> findAllItems()
     {
         return itemRepository.findAll();
