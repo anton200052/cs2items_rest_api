@@ -1,6 +1,7 @@
 package me.vasylkov.cs2itemsrestapi.rest.component;
 
 import me.vasylkov.cs2itemsrestapi.database.entity.Item;
+import me.vasylkov.cs2itemsrestapi.database.entity.SteamWebApiItem;
 import me.vasylkov.cs2itemsrestapi.rest.dto.ItemDTO;
 import org.springframework.stereotype.Component;
 
@@ -8,18 +9,16 @@ import org.springframework.stereotype.Component;
 public class ItemToDtoConverter implements EntityDTOConverter<Item, ItemDTO>
 {
     @Override
-    public ItemDTO convertToDto(Item item)
+    public ItemDTO convertToDto(Item steamWebApiItem)
     {
         ItemDTO itemDTO = new ItemDTO();
-        itemDTO.setName(item.getName());
-        itemDTO.setMarketable(item.getMarketable());
-        itemDTO.setTradable(item.getTradable());
-        itemDTO.setClassId(item.getClassId());
-        itemDTO.setType(item.getType());
-        itemDTO.setRarity(item.getRarity());
-        itemDTO.setRarityColor(item.getRarityColor());
-        itemDTO.setFirstSaleDate(item.getFirstSaleDate());
-        itemDTO.setPrice(item.getPrice());
+        itemDTO.setMarketHashName(steamWebApiItem.getMarketHashName());
+        itemDTO.setPriceLatest(steamWebApiItem.getPriceLatest());
+        itemDTO.setPriceReal(steamWebApiItem.getPriceReal());
+        itemDTO.setPriceMedian(steamWebApiItem.getPriceMedian());
+        itemDTO.setPriceAvg(steamWebApiItem.getPriceAvg());
+        itemDTO.setPriceMax(steamWebApiItem.getPriceMax());
+        itemDTO.setPriceMin(steamWebApiItem.getPriceMin());
         return itemDTO;
     }
 }

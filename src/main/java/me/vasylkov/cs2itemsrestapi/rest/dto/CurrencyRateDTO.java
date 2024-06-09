@@ -12,12 +12,14 @@ import java.time.LocalDateTime;
 @Data
 public class CurrencyRateDTO
 {
-    @JsonProperty("currency_code")
-    private CurrencyCode currencyCode;
+    private BigDecimal baseRate;
 
+    private BigDecimal changeRate;
 
-    private BigDecimal rate;
+    private CurrencyCode base;
 
-    @JsonProperty("last_updated")
-    private LocalDateTime lastUpdated;
+    private CurrencyCode change;
+
+    private String symbol;
+
 }

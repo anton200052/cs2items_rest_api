@@ -29,9 +29,15 @@ public class GlobalExceptionHandler
     }
 
     @ExceptionHandler(DatabaseUpdateInProgressException.class)
-    public ResponseEntity<?> handleTypeMismatchException(DatabaseUpdateInProgressException exception)
+    public ResponseEntity<?> handleUpdateInProgressException(DatabaseUpdateInProgressException exception)
     {
         return converter.convertToResponseEntity(new ErrorResponse(exception.getMessage()), HttpStatus.LOCKED);
+    }
+
+    @ExceptionHandler(DatabaseUpdateUnexpectedException.class)
+    public ResponseEntity<?> handleUpdateUnexpectedException(DatabaseUpdateUnexpectedException exception)
+    {
+        return converter.convertToResponseEntity(new ErrorResponse(exception.getMessage()), HttpStatus.SERVICE_UNAVAILABLE);
     }
 
     @ExceptionHandler(NoResourceFoundException.class)

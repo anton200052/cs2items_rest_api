@@ -1,6 +1,7 @@
 package me.vasylkov.cs2itemsrestapi.rest.component;
 
 import me.vasylkov.cs2itemsrestapi.database.entity.CurrencyRate;
+import me.vasylkov.cs2itemsrestapi.database.entity.SteamWebApiCurrencyRate;
 import me.vasylkov.cs2itemsrestapi.rest.dto.CurrencyRateDTO;
 import org.springframework.stereotype.Component;
 
@@ -11,9 +12,11 @@ public class CurrencyRateToDtoConverter implements EntityDTOConverter<CurrencyRa
     public CurrencyRateDTO convertToDto(CurrencyRate currencyRate)
     {
         CurrencyRateDTO currencyRateDTO = new CurrencyRateDTO();
-        currencyRateDTO.setCurrencyCode(currencyRate.getCurrencyCode());
-        currencyRateDTO.setRate(currencyRate.getRate());
-        currencyRateDTO.setLastUpdated(currencyRate.getLastUpdated());
+        currencyRateDTO.setBaseRate(currencyRate.getBaseRate());
+        currencyRateDTO.setChangeRate(currencyRate.getChangeRate());
+        currencyRateDTO.setBase(currencyRate.getBase());
+        currencyRateDTO.setChange(currencyRate.getChange());
+        currencyRateDTO.setSymbol(currencyRate.getSymbol());
         return currencyRateDTO;
     }
 }

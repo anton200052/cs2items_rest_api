@@ -1,48 +1,26 @@
 package me.vasylkov.cs2itemsrestapi.database.entity;
 
-
-import jakarta.persistence.*;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
-import java.util.Objects;
 
-@Getter
-@Setter
-@Entity
-@Table(name = "currency_rates")
-@NoArgsConstructor
-public class CurrencyRate
+public interface CurrencyRate
 {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    BigDecimal getBaseRate();
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "currency_code", nullable = false, length = 3)
-    private CurrencyCode currencyCode;;
+    void setBaseRate(BigDecimal baseRate);
 
-    @Column(name = "rate", nullable = false)
-    private BigDecimal rate;
+    BigDecimal getChangeRate();
 
-    @Column(name = "last_updated", nullable = false)
-    private LocalDateTime lastUpdated;
+    void setChangeRate(BigDecimal changeRate);
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        CurrencyRate that = (CurrencyRate) o;
-        return (rate == null ? that.rate == null : rate.compareTo(that.rate) == 0)  &&
-                currencyCode == that.currencyCode;
-    }
+    CurrencyCode getChange();
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, currencyCode, rate, lastUpdated);
-    }
+    void setChange(CurrencyCode change);
+
+    CurrencyCode getBase();
+
+    void setBase(CurrencyCode base);
+
+    String getSymbol();
+
+    void setSymbol(String symbol);
 }

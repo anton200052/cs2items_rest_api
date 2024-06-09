@@ -1,30 +1,23 @@
 package me.vasylkov.cs2itemsrestapi.rest.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import me.vasylkov.cs2itemsrestapi.database.entity.Price;
+
+import java.math.BigDecimal;
 
 @Data
 public class ItemDTO
 {
-    private String name;
+    private String marketHashName;
 
-    private boolean marketable;
+    private BigDecimal priceLatest;
 
-    private boolean tradable;
+    private BigDecimal priceReal;
 
-    private String classId;
+    private BigDecimal priceMedian;
 
-    private String type;
+    private BigDecimal priceAvg;
 
-    private String rarity;
+    private BigDecimal priceMin;
 
-    @JsonProperty("rarity_color")
-    private String rarityColor;
-
-    @JsonProperty("first_sale_date")
-    private Long firstSaleDate;
-
-    private Price price;
+    private BigDecimal priceMax;
 }
