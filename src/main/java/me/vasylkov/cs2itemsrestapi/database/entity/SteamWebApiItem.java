@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Objects;
 
 @Getter
@@ -48,18 +49,23 @@ public class SteamWebApiItem implements Item
     @JsonProperty("pricemax")
     private BigDecimal priceMax;
 
+    private static BigDecimal scale(BigDecimal value)
+    {
+        return value == null ? null : value.setScale(2, RoundingMode.HALF_UP);
+    }
+
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(Object o)
+    {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        SteamWebApiItem steamWebApiItem = (SteamWebApiItem) o;
-        return
-                Objects.equals(marketHashName, steamWebApiItem.marketHashName) &&
-                (priceReal == null ? steamWebApiItem.priceReal == null : priceReal.compareTo(steamWebApiItem.priceReal) == 0) &&
-                (priceMedian == null ? steamWebApiItem.priceMedian == null : priceMedian.compareTo(steamWebApiItem.priceMedian) == 0) &&
-                (priceAvg == null ? steamWebApiItem.priceAvg == null : priceAvg.compareTo(steamWebApiItem.priceAvg) == 0) &&
-                (priceMin == null ? steamWebApiItem.priceMin == null : priceMin.compareTo(steamWebApiItem.priceMin) == 0) &&
-                (priceMax == null ? steamWebApiItem.priceMax == null : priceMax.compareTo(steamWebApiItem.priceMax) == 0);
+        SteamWebApiItem that = (SteamWebApiItem) o;
+        return Objects.equals(marketHashName, that.marketHashName) &&
+                (priceReal == null ? that.priceReal == null : scale(priceReal).compareTo(scale(that.priceReal)) == 0) &&
+                (priceMedian == null ? that.priceMedian == null : scale(priceMedian).compareTo(scale(that.priceMedian)) == 0) &&
+                (priceAvg == null ? that.priceAvg == null : scale(priceAvg).compareTo(scale(that.priceAvg)) == 0) &&
+                (priceMin == null ? that.priceMin == null : scale(priceMin).compareTo(scale(that.priceMin)) == 0) &&
+                (priceMax == null ? that.priceMax == null : scale(priceMax).compareTo(scale(that.priceMax)) == 0);
     }
 
     @Override

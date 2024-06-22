@@ -4,6 +4,9 @@ import lombok.RequiredArgsConstructor;
 import me.vasylkov.cs2itemsrestapi.database.entity.CurrencyCode;
 import me.vasylkov.cs2itemsrestapi.database.entity.CurrencyRate;
 import me.vasylkov.cs2itemsrestapi.database.entity.SteamWebApiCurrencyRate;
+import me.vasylkov.cs2itemsrestapi.database.entity.SteamWebApiItem;
+import me.vasylkov.cs2itemsrestapi.rest.exception.NullBodyException;
+import me.vasylkov.cs2itemsrestapi.resttemplate.response_entity.SteamWebApiCurrencyRateResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -11,6 +14,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -22,24 +26,16 @@ public class SteamWebApiCurrencyFetcherService implements CurrencyFetcherService
     private String currencyUrl;
 
     @Override
-    public CurrencyRate fetchCurrencyRate(CurrencyCode base, CurrencyCode change)
+    public List<CurrencyRate> fetchAllCurrencyRates(CurrencyCode base)
     {
-        String url = UriComponentsBuilder.fromHttpUrl(currencyUrl)
-                .queryParam("base", base)
-                .queryParam("change", change)
-                .toUriString();
-        return restTemplate.getForObject(url, SteamWebApiCurrencyRate.class);
-    }
+        String url = UriComponentsBuilder.fromHttpUrl(currencyUrl).queryParam("base", base.toString()).toUriString();
 
-    @Override
-    public List<CurrencyRate> fetchAllCurrencyRates()
-    {
-        List<CurrencyRate> currencyRates = new ArrayList<>();
-        for (CurrencyCode currencyCode : CurrencyCode.values())
+        SteamWebApiCurrencyRateResponse currencyRateResponse = restTemplate.getForObject(url, SteamWebApiCurrencyRateResponse.class);
+        if (currencyRateResponse == null || currencyRateResponse.getRates() == null)
         {
-            currencyRates.add(fetchCurrencyRate(CurrencyCode.USD, currencyCode));
+            throw new NullBodyException("Received null rates body");
         }
-        return currencyRates;
+        return currencyRateResponse.getRates().entrySet().stream().map(entry -> new SteamWebApiCurrencyRate(entry.getValue(), currencyRateResponse.getBase(), entry.getKey())).collect(Collectors.toList());
     }
 
 }

@@ -12,14 +12,9 @@ import java.time.LocalDateTime;
 @Data
 public class CurrencyRateDTO
 {
-    private BigDecimal baseRate;
-
-    private BigDecimal changeRate;
-
     private CurrencyCode base;
 
     private CurrencyCode change;
 
-    private String symbol;
-
+    private BigDecimal changeRate;
 }

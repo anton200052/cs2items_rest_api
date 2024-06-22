@@ -36,11 +36,9 @@ public class SteamWebApiCurrencyService implements CurrencyRateService
             CurrencyRate dbCurrencyRate = existingItems.getOrDefault(currencyRate.getChange(), new SteamWebApiCurrencyRate());
             if (!dbCurrencyRate.equals(currencyRate))
             {
-                dbCurrencyRate.setBaseRate(currencyRate.getBaseRate());
                 dbCurrencyRate.setChangeRate(currencyRate.getChangeRate());
                 dbCurrencyRate.setBase(currencyRate.getBase());
                 dbCurrencyRate.setChange(currencyRate.getChange());
-                dbCurrencyRate.setSymbol(currencyRate.getSymbol());
 
                 toBeSaved.add(dbCurrencyRate);
                 updatedCount++;

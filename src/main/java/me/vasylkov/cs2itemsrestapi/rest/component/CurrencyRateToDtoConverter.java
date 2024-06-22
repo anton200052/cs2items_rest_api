@@ -12,11 +12,9 @@ public class CurrencyRateToDtoConverter implements EntityDTOConverter<CurrencyRa
     public CurrencyRateDTO convertToDto(CurrencyRate currencyRate)
     {
         CurrencyRateDTO currencyRateDTO = new CurrencyRateDTO();
-        currencyRateDTO.setBaseRate(currencyRate.getBaseRate());
         currencyRateDTO.setChangeRate(currencyRate.getChangeRate());
         currencyRateDTO.setBase(currencyRate.getBase());
         currencyRateDTO.setChange(currencyRate.getChange());
-        currencyRateDTO.setSymbol(currencyRate.getSymbol());
         return currencyRateDTO;
     }
 }

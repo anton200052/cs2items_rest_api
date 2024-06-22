@@ -47,9 +47,14 @@ public class GlobalExceptionHandler
     }
 
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
-    public ResponseEntity<?> handleTypeMismatch(MethodArgumentTypeMismatchException e)
+    public ResponseEntity<?> handleTypeMismatchException(MethodArgumentTypeMismatchException e)
     {
         return converter.convertToResponseEntity(new ErrorResponse("Invalid argument: " + e.getValue()), HttpStatus.BAD_REQUEST);
     }
 
+    @ExceptionHandler(NullBodyException.class)
+    public ResponseEntity<?> handleNullBodyException(NullBodyException e)
+    {
+        return converter.convertToResponseEntity(new ErrorResponse(e.getMessage()), HttpStatus.BAD_REQUEST);
+    }
 }

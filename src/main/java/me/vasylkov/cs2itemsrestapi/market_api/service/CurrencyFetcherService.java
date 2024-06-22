@@ -7,6 +7,5 @@ import java.util.List;
 
 public interface CurrencyFetcherService
 {
-    CurrencyRate fetchCurrencyRate(CurrencyCode base, CurrencyCode change);
-    List<CurrencyRate> fetchAllCurrencyRates();
+    List<CurrencyRate> fetchAllCurrencyRates(CurrencyCode base);
 }

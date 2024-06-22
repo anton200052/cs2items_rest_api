@@ -1,0 +1,134 @@
+2024-06-19 00:27:54 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-06-19 00:27:54 [restartedMain] INFO  m.v.c.Cs2itemsrestapiApplication - Starting Cs2itemsrestapiApplication using Java 19.0.1 with PID 14588 (C:\Users\neatr\OneDrive\Рабочий стол\cs2itemsrestapi\target\classes started by neatr in C:\Users\neatr\OneDrive\Рабочий стол\cs2itemsrestapi)
+2024-06-19 00:27:54 [restartedMain] INFO  m.v.c.Cs2itemsrestapiApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-19 00:27:54 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-19 00:27:54 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-19 00:27:55 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-19 00:27:55 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 50 ms. Found 2 JPA repository interfaces.
+2024-06-19 00:27:56 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-06-19 00:27:56 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-19 00:27:56 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-19 00:27:56 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-06-19 00:27:56 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-19 00:27:56 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1550 ms
+2024-06-19 00:27:56 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-06-19 00:27:56 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6408cb54
+2024-06-19 00:27:56 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-06-19 00:27:56 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-19 00:27:56 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-19 00:27:56 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-06-19 00:27:57 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-19 00:27:57 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-19 00:27:57 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-19 00:27:58 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-19 00:27:58 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-06-19 00:27:58 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-06-19 00:27:58 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2024-06-19 00:27:58 [restartedMain] INFO  m.v.c.Cs2itemsrestapiApplication - Started Cs2itemsrestapiApplication in 4.613 seconds (process running for 5.639)
+2024-06-19 00:28:18 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-19 00:28:18 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-19 00:28:18 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-06-19 12:33:54 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-06-19 12:33:54 [restartedMain] INFO  m.v.c.Cs2itemsrestapiApplication - Starting Cs2itemsrestapiApplication using Java 19.0.1 with PID 1540 (C:\Users\neatr\OneDrive\Рабочий стол\cs2itemsrestapi\target\classes started by neatr in C:\Users\neatr\OneDrive\Рабочий стол\cs2itemsrestapi)
+2024-06-19 12:33:54 [restartedMain] INFO  m.v.c.Cs2itemsrestapiApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-19 12:33:54 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-19 12:33:54 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-19 12:33:55 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-19 12:33:55 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 47 ms. Found 2 JPA repository interfaces.
+2024-06-19 12:33:55 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-06-19 12:33:55 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-19 12:33:55 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-19 12:33:55 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-06-19 12:33:55 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-19 12:33:55 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1472 ms
+2024-06-19 12:33:55 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-06-19 12:33:56 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@24c6cdec
+2024-06-19 12:33:56 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-06-19 12:33:56 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-19 12:33:56 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-19 12:33:56 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-06-19 12:33:56 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-19 12:33:57 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-19 12:33:57 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-19 12:33:57 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-19 12:33:58 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-06-19 12:33:58 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-06-19 12:33:58 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2024-06-19 12:33:58 [restartedMain] INFO  m.v.c.Cs2itemsrestapiApplication - Started Cs2itemsrestapiApplication in 4.399 seconds (process running for 7.324)
+2024-06-19 12:34:01 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-19 12:34:01 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-19 12:34:01 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-06-19 12:34:01 [http-nio-8080-exec-1] INFO  Cs2ItemsRestAPI - Updating items DB
+2024-06-19 12:34:11 [http-nio-8080-exec-1] INFO  Cs2ItemsRestAPI - Updated 19015 items.
+2024-06-19 12:34:15 [http-nio-8080-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2024-06-19 12:34:52 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-19 12:34:52 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-06-19 12:34:52 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-06-19 22:55:18 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-06-19 22:55:18 [restartedMain] INFO  m.v.c.Cs2itemsrestapiApplication - Starting Cs2itemsrestapiApplication using Java 19.0.1 with PID 14092 (C:\Users\neatr\OneDrive\Рабочий стол\cs2itemsrestapi\target\classes started by neatr in C:\Users\neatr\OneDrive\Рабочий стол\cs2itemsrestapi)
+2024-06-19 22:55:18 [restartedMain] INFO  m.v.c.Cs2itemsrestapiApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-19 22:55:18 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-19 22:55:18 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-19 22:55:19 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-19 22:55:19 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 65 ms. Found 2 JPA repository interfaces.
+2024-06-19 22:55:20 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-06-19 22:55:20 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-19 22:55:20 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-19 22:55:20 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-06-19 22:55:20 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-19 22:55:20 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2177 ms
+2024-06-19 22:55:20 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-06-19 22:55:21 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2cb47936
+2024-06-19 22:55:21 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-06-19 22:55:21 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-19 22:55:21 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-19 22:55:21 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-06-19 22:55:22 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-19 22:55:23 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-19 22:55:23 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-19 22:55:23 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-19 22:55:23 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-06-19 22:55:23 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-06-19 22:55:23 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2024-06-19 22:55:23 [restartedMain] INFO  m.v.c.Cs2itemsrestapiApplication - Started Cs2itemsrestapiApplication in 5.745 seconds (process running for 6.774)
+2024-06-19 22:55:27 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-19 22:55:27 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-19 22:55:27 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-06-19 22:55:27 [http-nio-8080-exec-1] INFO  Cs2ItemsRestAPI - Updating items DB
+2024-06-19 22:55:35 [http-nio-8080-exec-1] INFO  Cs2ItemsRestAPI - Updated 11754 items.
+2024-06-19 22:55:38 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2024-06-19 22:55:43 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/items/updateRates.]
+2024-06-19 22:56:06 [http-nio-8080-exec-9] INFO  Cs2ItemsRestAPI - Updating currency DB
+2024-06-19 22:56:07 [http-nio-8080-exec-9] INFO  Cs2ItemsRestAPI - Updated 1 currency rates.
+2024-06-19 23:02:39 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [me.vasylkov.cs2itemsrestapi.rest.exception.EntityNotFoundException: Item with name Sticker | Spinx (Holo not found]
+2024-06-19 23:02:43 [http-nio-8080-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [me.vasylkov.cs2itemsrestapi.rest.exception.EntityNotFoundException: Item with name Sticker | w0nderful (Glitter not found]
+2024-06-19 23:02:43 [http-nio-8080-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [me.vasylkov.cs2itemsrestapi.rest.exception.EntityNotFoundException: Item with name Sticker | Champion) | Copenhagen 2024 not found]
+2024-06-19 23:02:56 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [me.vasylkov.cs2itemsrestapi.rest.exception.EntityNotFoundException: Item with name Sticker | dupreeh (Glitter not found]
+2024-06-19 23:02:57 [http-nio-8080-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [me.vasylkov.cs2itemsrestapi.rest.exception.EntityNotFoundException: Item with name Sticker | Champion) | Paris 2023 not found]
+2024-06-19 23:02:57 [http-nio-8080-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [me.vasylkov.cs2itemsrestapi.rest.exception.EntityNotFoundException: Item with name Sticker | Magisk (Glitter not found]
+2024-06-19 23:02:57 [http-nio-8080-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [me.vasylkov.cs2itemsrestapi.rest.exception.EntityNotFoundException: Item with name Sticker | Champion) | Paris 2023 not found]
+2024-06-19 23:03:56 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [me.vasylkov.cs2itemsrestapi.rest.exception.EntityNotFoundException: Item with name Sticker | iM (Glitter not found]
+2024-06-19 23:03:58 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [me.vasylkov.cs2itemsrestapi.rest.exception.EntityNotFoundException: Item with name Sticker | iM (Glitter not found]
+2024-06-19 23:03:58 [http-nio-8080-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [me.vasylkov.cs2itemsrestapi.rest.exception.EntityNotFoundException: Item with name Sticker | Champion) | Copenhagen 2024 not found]
+2024-06-19 23:05:07 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [me.vasylkov.cs2itemsrestapi.rest.exception.EntityNotFoundException: Item with name Sticker | jL (Glitter not found]
+2024-06-19 23:05:07 [http-nio-8080-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [me.vasylkov.cs2itemsrestapi.rest.exception.EntityNotFoundException: Item with name Sticker | Champion) | Copenhagen 2024 not found]
+2024-06-19 23:05:28 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [me.vasylkov.cs2itemsrestapi.rest.exception.EntityNotFoundException: Item with name Sticker | ZywOo (Glitter not found]
+2024-06-19 23:05:28 [http-nio-8080-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [me.vasylkov.cs2itemsrestapi.rest.exception.EntityNotFoundException: Item with name Sticker | Champion) | Paris 2023 not found]
+2024-06-19 23:05:29 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [me.vasylkov.cs2itemsrestapi.rest.exception.EntityNotFoundException: Item with name Sticker | w0nderful (Glitter not found]
+2024-06-19 23:05:29 [http-nio-8080-exec-10] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [me.vasylkov.cs2itemsrestapi.rest.exception.EntityNotFoundException: Item with name Sticker | Champion) | Copenhagen 2024 not found]
+2024-06-19 23:05:29 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [me.vasylkov.cs2itemsrestapi.rest.exception.EntityNotFoundException: Item with name Sticker | Aleksib (Glitter not found]
+2024-06-19 23:05:49 [http-nio-8080-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [me.vasylkov.cs2itemsrestapi.rest.exception.EntityNotFoundException: Item with name Sticker | ZywOo (Glitter not found]
+2024-06-19 23:05:49 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [me.vasylkov.cs2itemsrestapi.rest.exception.EntityNotFoundException: Item with name Sticker | Champion) | Paris 2023 not found]
+2024-06-19 23:08:19 [http-nio-8080-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [me.vasylkov.cs2itemsrestapi.rest.exception.EntityNotFoundException: Item with name Sticker | ZywOo (Glitter not found]
+2024-06-19 23:08:19 [http-nio-8080-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [me.vasylkov.cs2itemsrestapi.rest.exception.EntityNotFoundException: Item with name Sticker | Champion) | Paris 2023 not found]
+2024-06-19 23:08:19 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [me.vasylkov.cs2itemsrestapi.rest.exception.EntityNotFoundException: Item with name Sticker | w0nderful (Glitter not found]
+2024-06-19 23:08:20 [http-nio-8080-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [me.vasylkov.cs2itemsrestapi.rest.exception.EntityNotFoundException: Item with name Sticker | Champion) | Copenhagen 2024 not found]
+2024-06-19 23:08:20 [http-nio-8080-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [me.vasylkov.cs2itemsrestapi.rest.exception.EntityNotFoundException: Item with name Sticker | Aleksib (Glitter not found]
+2024-06-19 23:08:21 [http-nio-8080-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [me.vasylkov.cs2itemsrestapi.rest.exception.EntityNotFoundException: Item with name Sticker | Lambda,  Angry T not found]
+2024-06-19 23:08:21 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [me.vasylkov.cs2itemsrestapi.rest.exception.EntityNotFoundException: Item with name Sticker | Aleksib (Holo not found]
+2024-06-19 23:08:21 [http-nio-8080-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [me.vasylkov.cs2itemsrestapi.rest.exception.EntityNotFoundException: Item with name Sticker | Champion) | Copenhagen 2024 not found]
+2024-06-19 23:10:06 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [me.vasylkov.cs2itemsrestapi.rest.exception.EntityNotFoundException: Item with name Sticker | dupreeh (Glitter not found]
+2024-06-19 23:10:06 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [me.vasylkov.cs2itemsrestapi.rest.exception.EntityNotFoundException: Item with name Sticker | Champion) | Paris 2023 not found]
+2024-06-19 23:30:50 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-19 23:30:50 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-06-19 23:30:50 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

@@ -2,11 +2,13 @@ package me.vasylkov.cs2itemsrestapi.database.entity;
 
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -21,9 +23,6 @@ public class SteamWebApiCurrencyRate implements CurrencyRate
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "base_rate", nullable = false)
-    private BigDecimal baseRate;
-
     @Column(name = "change_rate", nullable = false)
     private BigDecimal changeRate;
 
@@ -35,29 +34,32 @@ public class SteamWebApiCurrencyRate implements CurrencyRate
     @Column(name = "change_code", nullable = false, length = 3)
     private CurrencyCode change;
 
-    @Column(name = "symbol", nullable = false)
-    private String symbol;
+    public SteamWebApiCurrencyRate(BigDecimal changeRate, CurrencyCode base, CurrencyCode change)
+    {
+        this.changeRate = changeRate;
+        this.base = base;
+        this.change = change;
+    }
 
+    private BigDecimal scale(BigDecimal value)
+    {
+        return value == null ? null : value.setScale(6, RoundingMode.HALF_UP);
+    }
 
     @Override
     public boolean equals(Object o)
     {
-        if (this == o)
-            return true;
-        if (o == null || getClass() != o.getClass())
-            return false;
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
         SteamWebApiCurrencyRate that = (SteamWebApiCurrencyRate) o;
-        return
-                (baseRate == null ? that.baseRate == null : baseRate.compareTo(that.baseRate) == 0) &&
-                (changeRate == null ? that.changeRate == null : changeRate.compareTo(that.changeRate) == 0) &&
+        return (changeRate == null ? that.changeRate == null : scale(changeRate).compareTo(scale(that.changeRate)) == 0) &&
                 base == that.base &&
-                change == that.change &&
-                Objects.equals(symbol, that.symbol);
+                change == that.change;
     }
 
     @Override
     public int hashCode()
     {
-        return Objects.hash(baseRate, changeRate, base, change, symbol);
+        return Objects.hash(changeRate, base, change);
     }
 }

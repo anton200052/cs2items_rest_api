@@ -4,10 +4,6 @@ import java.math.BigDecimal;
 
 public interface CurrencyRate
 {
-    BigDecimal getBaseRate();
-
-    void setBaseRate(BigDecimal baseRate);
-
     BigDecimal getChangeRate();
 
     void setChangeRate(BigDecimal changeRate);
@@ -19,8 +15,4 @@ public interface CurrencyRate
     CurrencyCode getBase();
 
     void setBase(CurrencyCode base);
-
-    String getSymbol();
-
-    void setSymbol(String symbol);
 }
